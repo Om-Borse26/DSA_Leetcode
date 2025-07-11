@@ -33,6 +33,14 @@ class Solution {
             last = newNode;
             p2 = p2.next;
         }
+        while(p2 != null){
+            int sum = p2.val + carry;
+            ListNode newNode = new ListNode(sum % 10);
+            carry = sum / 10;
+            last.next = newNode;
+            last = newNode;
+            p2 = p2.next;
+        }
 
         while(p1 != null){
             int sum = p1.val + carry;
