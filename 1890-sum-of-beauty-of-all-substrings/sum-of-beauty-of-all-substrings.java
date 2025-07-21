@@ -3,14 +3,9 @@ class Solution {
         int totalBeauty = 0;
         
         for (int i = 0; i < s.length(); i++) {
+            int[] freq = new int[26];
             for (int j = i; j < s.length(); j++) {
-                String substring = s.substring(i, j + 1);
-                
-                int[] freq = new int[26];
-                for (int k = 0; k < substring.length(); k++) {
-                    freq[substring.charAt(k) - 'a']++;
-                }
-                
+                freq[s.charAt(j) - 'a']++;
                 int maxFreq = 0;
                 int minFreq = Integer.MAX_VALUE;
                 
@@ -21,9 +16,7 @@ class Solution {
                     }
                 }
                 
-                if (minFreq != Integer.MAX_VALUE) {  
-                    totalBeauty += (maxFreq - minFreq);
-                }
+                totalBeauty += (maxFreq - minFreq);
             }
         }
         
