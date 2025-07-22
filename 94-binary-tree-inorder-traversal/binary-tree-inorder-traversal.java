@@ -33,21 +33,21 @@ class Solution {
     // }
 
     public List<Integer> inorderTraversal(TreeNode root) {
-    List<Integer> result = new ArrayList<>();
+    List<Integer> l1 = new ArrayList<>();
     Stack<TreeNode> stack = new Stack<>();
     
-    TreeNode current = root;
+    TreeNode temp = root;
 
-    while (current != null || !stack.isEmpty()) {
-        while (current != null) {
-            stack.push(current);
-            current = current.left;
+    while (temp != null || !stack.isEmpty()) {
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.left;
         }
-        current = stack.pop();
-        result.add(current.val);
-        current = current.right;
+        temp = stack.pop();
+        l1.add(temp.val);
+        temp = temp.right;
     }
-    return result;
+    return l1;
 }
 
 }
