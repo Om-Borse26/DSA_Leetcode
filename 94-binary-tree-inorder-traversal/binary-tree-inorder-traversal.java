@@ -35,6 +35,7 @@ class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
     List<Integer> result = new ArrayList<>();
     Stack<TreeNode> stack = new Stack<>();
+    
     TreeNode current = root;
 
     while (current != null || !stack.isEmpty()) {
